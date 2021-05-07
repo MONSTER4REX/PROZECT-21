@@ -48,9 +48,7 @@ function draw() {
        
         
     }
-
-
-
+    
     if(block2.isTouching(ball) && ball.bounceOff(block2)){
         ball.shapeColor = "orange";
         
