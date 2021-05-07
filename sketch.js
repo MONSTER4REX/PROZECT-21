@@ -39,7 +39,7 @@ function draw() {
     edges=createEdgeSprites();
     ball.bounceOff(edges);
 
-    if(keypDown("leftclick")){
+    if(keyDown("space")){
      ball.velocityX = 3;
      ball.velocityY = -5;
     }
