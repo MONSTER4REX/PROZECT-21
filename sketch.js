@@ -38,7 +38,7 @@ function draw() {
     edges=createEdgeSprites();
     ball.bounceOff(edges);
 
-    if(keyDown("space")){
+    if(keypDown("space")){
      ball.velocityX = 3;
      ball.velocityY = -5;
     }
