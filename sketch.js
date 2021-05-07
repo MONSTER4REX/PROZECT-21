@@ -5,6 +5,7 @@ var music;
 
 function preload(){
     // load sound here
+    music = loadSound("music.mp3");
 }
 
 
@@ -28,6 +29,9 @@ function setup(){
     ball = createSprite(random(20,750),100, 40,40);
     ball.shapeColor = rgb(255,255,255);
     //write code to add velocityX and velocityY
+    ball.velocityX = 3;
+    ball.velocityY = -5;
+
 
 }
 
@@ -41,21 +45,34 @@ function draw() {
     if(block1.isTouching(ball) && ball.bounceOff(block1)){
         ball.shapeColor = "blue";
         music.play();
+       
+        
     }
 
 
 
-    if(block2.isTouching(ball)){
+    if(block2.isTouching(ball) && ball.bounceOff(block2)){
         ball.shapeColor = "orange";
+        
         //write code to set velocityX and velocityY of ball as 0
+        ball.velocityX = 0;
+        ball.velocityY = 0;
 
         //write code to stop music
+        music.stop();
     }
 
     //write code to bounce off ball from the block3
-
+    if(block3.isTouching(ball) && ball.bounceOff(block3)){
+        ball.shapeColor = "red";
+        music.play();
+    }
 
     //write code to bounce off ball from the block4
+    if(block4.isTouching(ball) && ball.bounceOff(block4)){
+        ball.shapeColor = "green";
+        music.play();
+    }
 
     drawSprites();
 }
